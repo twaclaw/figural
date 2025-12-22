@@ -4,13 +4,13 @@
 
 ## Installation
 
-You can install `figural` using pip:
+You can install `figural` using PyPI:
 
 ```bash
 pip install figural
 ```
 
-Or from source (here I am using [uv](https://docs.astral.sh/uv/getting-started/installation/)) but you can use any Python environment of your choice:
+Or from source. Here I am using [uv](https://docs.astral.sh/uv/getting-started/installation/) but you can use any Python environment of your choice:
 
 ```bash
 git clone https://github.com/twaclaw/figural.git
@@ -82,9 +82,61 @@ pn.draw_ith(5, with_label=True, color="green")
 tr.draw_ith(3, with_label=True, return_tikz=True)
 ```
 
+<details>
+<summary>Click to expand TikZ code</summary>
+
 ```latex
-'% This file was created with tikzplotlib v0.10.1.\n\\begin{tikzpicture}\n\n\\definecolor{darkgrey176}{RGB}{176,176,176}\n\n\\begin{axis}[\nhide x axis,\nhide y axis,\ntick align=outside,\ntick pos=left,\nx grid style={darkgrey176},\nxmin=-0.05, xmax=1.05,\nxtick style={color=black},\ny grid style={darkgrey176},\nymin=-0.05, ymax=1.05,\nytick style={color=black}\n]\n\\addplot [black]\ntable {%\n0 0\n1 0\n0.5 1\n0 0\n};\n\\addplot [semithick, black, mark=*, mark size=5, mark options={solid}, only marks]\ntable {%\n0 0\n0.5 0\n1 0\n};\n\\addplot [semithick, black, mark=*, mark size=5, mark options={solid}, only marks]\ntable {%\n0.25 0.5\n0.75 0.5\n};\n\\addplot [semithick, black, mark=*, mark size=5, mark options={solid}, only marks]\ntable {%\n0.5 1\n};\n\\draw (axis cs:0.5,-0.25) node[\n  scale=0.6,\n  anchor=north,\n  text=black,\n  rotate=0.0\n]{$T_{3}=6$};\n\\end{axis}\n\n\\end{tikzpicture}\n'
+% This file was created with tikzplotlib v0.10.1.
+\begin{tikzpicture}
+
+\definecolor{darkgrey176}{RGB}{176,176,176}
+
+\begin{axis}[
+hide x axis,
+hide y axis,
+tick align=outside,
+tick pos=left,
+x grid style={darkgrey176},
+xmin=-0.05, xmax=1.05,
+xtick style={color=black},
+y grid style={darkgrey176},
+ymin=-0.05, ymax=1.05,
+ytick style={color=black}
+]
+\addplot [black]
+table {%
+0 0
+1 0
+0.5 1
+0 0
+};
+\addplot [semithick, black, mark=*, mark size=5, mark options={solid}, only marks]
+table {%
+0 0
+0.5 0
+1 0
+};
+\addplot [semithick, black, mark=*, mark size=5, mark options={solid}, only marks]
+table {%
+0.25 0.5
+0.75 0.5
+};
+\addplot [semithick, black, mark=*, mark size=5, mark options={solid}, only marks]
+table {%
+0.5 1
+};
+\draw (axis cs:0.5,-0.25) node[
+    scale=0.6,
+    anchor=north,
+    text=black,
+    rotate=0.0
+]{$T_{3}=6$};
+\end{axis}
+
+\end{tikzpicture}
 ```
+
+</details>
 
 ### Plotting ranges of numbers
 
@@ -102,4 +154,4 @@ pn.draw_range(1, 8, with_label=True, cols=4, draw_grid=True, color='blue')
 
 ## Contributing
 
-Sure thing! Feel fre to open an issue or create a pull request. 
+Sure thing! Feel fre to open an issue or create a pull request.
